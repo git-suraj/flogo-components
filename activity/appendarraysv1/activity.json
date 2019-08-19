@@ -3,7 +3,7 @@
   "type": "flogo:activity",
   "ref": "https://github.com/git-suraj/flogo-components/activity/appendarraysv1",
   "version": "0.0.1",
-  "title": "Append Arrays",
+  "title": "Append Arrays v1",
   "description": "append two arrays",
   "homepage":"https://github.com/git-suraj/flogo-components/tree/master/activity/appendarraysv1",
   "settings":[
