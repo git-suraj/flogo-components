@@ -17,12 +17,12 @@ var jsonMetadata = `{
     "input":[
       {
         "name": "array1",
-        "type": "array",
+        "type": "string",
         "required": true
       },
       {
         "name": "array2",
-        "type": "array",
+        "type": "string",
         "required": true
       }
     ],
@@ -33,8 +33,7 @@ var jsonMetadata = `{
         "required": true
       }
     ]
-  }
-  
+  }  
 `
 
 // init create & register activity

@@ -11,12 +11,12 @@
   "input":[
     {
       "name": "array1",
-      "type": "array",
+      "type": "string",
       "required": true
     },
     {
       "name": "array2",
-      "type": "array",
+      "type": "string",
       "required": true
     }
   ],
