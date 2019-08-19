@@ -1,7 +1,7 @@
 package appendarraysv1
 
 import (
-	"reflect"
+	"fmt"
 	"testing"
 
 	"io/ioutil"
@@ -50,7 +50,7 @@ func TestStructAppend(t *testing.T) {
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
-	array1 := []request{
+	/*array1 := []request{
 		request{"a1n1", "a1v1"},
 		request{"a1n2", "a1v2"},
 	}
@@ -66,5 +66,32 @@ func TestStructAppend(t *testing.T) {
 	object := reflect.ValueOf(value)
 	if object.Len() != 4 {
 		t.Fail()
+	}*/
+
+	a1 := `{
+		"arr":[
+			{
+				"name":"1",
+				"value":"a"
+			}
+		]
+	}`
+
+	a2 := `{
+		"arr":[
+			{
+				"name":"1",
+				"value":"a"
+			}
+		]
+	}`
+	tc.SetInput("array1", a1)
+	tc.SetInput("array2", a2)
+	act.Eval(tc)
+	value := tc.GetOutput("output").(string)
+	fmt.Println(value)
+	if len(value) < 4 {
+		t.Fail()
 	}
+
 }
