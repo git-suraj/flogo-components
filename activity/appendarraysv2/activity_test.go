@@ -1,7 +1,8 @@
 package appendarraysv2
 
 import (
-	"reflect"
+	"encoding/json"
+	"fmt"
 	"testing"
 
 	"io/ioutil"
@@ -37,7 +38,7 @@ func TestCreate(t *testing.T) {
 	}
 }
 
-func TestStructAppend(t *testing.T) {
+func TestStringAppend(t *testing.T) {
 
 	defer func() {
 		if r := recover(); r != nil {
@@ -50,21 +51,87 @@ func TestStructAppend(t *testing.T) {
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
-	array1 := []request{
-		request{"a1n1", "a1v1"},
-		request{"a1n2", "a1v2"},
-	}
-	array2 := []request{
-		request{"a2n1", "a2v1"},
-		request{"a2n2", "a2v2"},
-	}
+	array1 := []interface{}{"a", "b"}
+	array2 := []interface{}{"c", "d"}
 	tc.SetInput("array1", array1)
 	tc.SetInput("array2", array2)
 
 	act.Eval(tc)
-	value := tc.GetOutput("output").([]request)
-	object := reflect.ValueOf(value)
-	if object.Len() != 4 {
+
+	value := tc.GetOutput("output").([]interface{})
+
+	if len(value) != 4 {
+		t.Fail()
+	}
+}
+
+func TestIntAppend(t *testing.T) {
+
+	defer func() {
+		if r := recover(); r != nil {
+			t.Failed()
+			t.Errorf("panic during execution: %v", r)
+		}
+	}()
+
+	act := NewActivity(getActivityMetadata())
+	tc := test.NewTestActivityContext(getActivityMetadata())
+
+	//setup attrs
+	array1 := []interface{}{1, 2}
+	array2 := []interface{}{3, 4}
+	tc.SetInput("array1", array1)
+	tc.SetInput("array2", array2)
+
+	act.Eval(tc)
+
+	value := tc.GetOutput("output").([]interface{})
+
+	if len(value) != 4 {
+		t.Fail()
+	}
+}
+
+type Req1 []struct {
+	Name  string `json:"name"`
+	Value string `json:"value"`
+}
+
+func TestStructAppend(t *testing.T) {
+
+	defer func() {
+		if r := recover(); r != nil {
+			t.Failed()
+			t.Errorf("panic during execution: %v", r)
+		}
+	}()
+
+	act := NewActivity(getActivityMetadata())
+	tc := test.NewTestActivityContext(getActivityMetadata())
+
+	s1 := `[
+			{
+				"name":"1",
+				"value":"a"
+			}
+		]`
+
+	s2 := `[
+			{
+				"name":"2",
+				"value":"b"
+			}
+		]`
+	var a1 []interface{}
+	var a2 []interface{}
+	json.Unmarshal([]byte(s1), &a1)
+	json.Unmarshal([]byte(s2), &a2)
+	tc.SetInput("array1", a1)
+	tc.SetInput("array2", a2)
+	fmt.Println(act)
+	act.Eval(tc)
+	value := tc.GetOutput("output").([]interface{})
+	if len(value) != 2 {
 		t.Fail()
 	}
 }
