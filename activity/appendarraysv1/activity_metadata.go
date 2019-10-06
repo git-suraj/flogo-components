@@ -16,19 +16,19 @@ var jsonMetadata = `{
     "inputs": [
     {
       "name": "array1",
-      "type": "string",
+      "type": "array",
       "required": true
     },
     {
       "name": "array2",
-      "type": "string",
+      "type": "array",
       "required": true
     }
   ],
     "outputs": [
        {
       "name": "output",
-      "type": "string",
+      "type": "array",
       "required": true
     }
     ]

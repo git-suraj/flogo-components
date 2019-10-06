@@ -35,22 +35,22 @@ type Request struct {
 	} `json:"arr"`
 }
 
+// Req1 the request format
+type Req1 []struct {
+	Name  string `json:"name"`
+	Value string `json:"value"`
+}
+
 // Eval implements activity.Activity.Eval
 func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 
-	a1 := context.GetInput("array1").(string)
-	a2 := context.GetInput("array2").(string)
-	array1 := Request{}
-	json.Unmarshal([]byte(a1), &array1)
-	array2 := Request{}
-	json.Unmarshal([]byte(a2), &array2)
-	arrayop := append(array1.Arr, array2.Arr...)
-	res := Request{}
-	res.Arr = arrayop
-	b, err := json.Marshal(res)
+	a1 := context.GetInput("array1").(Req1)
+	a2 := context.GetInput("array2").(Req1)
+	arrayop := append(a1, a2...)
+	b, err := json.Marshal(arrayop)
 	if err != nil {
 		return false, err
 	}
-	context.SetOutput("output", string(b))
+	context.SetOutput("output", b)
 	return true, nil
 }

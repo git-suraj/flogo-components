@@ -1,6 +1,7 @@
 package appendarrays
 
 import (
+	"reflect"
 	"testing"
 
 	"io/ioutil"
@@ -56,7 +57,7 @@ func TestStringAppend(t *testing.T) {
 
 	act.Eval(tc)
 
-	value := tc.GetOutput("output").([]int)
+	value := tc.GetOutput("output").([]string)
 
 	if len(value) != 4 {
 		t.Fail()
@@ -83,9 +84,46 @@ func TestIntAppend(t *testing.T) {
 
 	act.Eval(tc)
 
-	value := tc.GetOutput("output").([]string)
+	value := tc.GetOutput("output").([]int)
 
 	if len(value) != 4 {
+		t.Fail()
+	}
+}
+
+type mystruct struct {
+	name  string
+	value string
+}
+
+func TestStructAppend(t *testing.T) {
+
+	defer func() {
+		if r := recover(); r != nil {
+			t.Failed()
+			t.Errorf("panic during execution: %v", r)
+		}
+	}()
+
+	act := NewActivity(getActivityMetadata())
+	tc := test.NewTestActivityContext(getActivityMetadata())
+
+	//setup attrs
+	array1 := []mystruct{
+		mystruct{"a1n1", "a1v1"},
+		mystruct{"a1n2", "a1v2"},
+	}
+	array2 := []mystruct{
+		mystruct{"a2n1", "a2v1"},
+		mystruct{"a2n2", "a2v2"},
+	}
+	tc.SetInput("array1", array1)
+	tc.SetInput("array2", array2)
+
+	act.Eval(tc)
+	value := tc.GetOutput("output").([]mystruct)
+	object := reflect.ValueOf(value)
+	if object.Len() != 4 {
 		t.Fail()
 	}
 }
