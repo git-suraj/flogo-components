@@ -10,7 +10,7 @@
   "display": {
     "description": "Publish EMS message",
     "category": "Utility",
-    "uid": "suraj-ems",
+    "uid": "s-ems",
     "visible": true
   },
   "inputs":[
