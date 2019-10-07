@@ -1,16 +1,16 @@
 {
   "name": "ems",
   "type": "flogo:activity",
-  "ref": "github.com/mmussett/flogo-components/activity/ems",
+  "ref": "github.com/git-suraj/flogo-components/activity/ems",
   "version": "0.0.1",
   "title": "Publish EMS message",
   "description": "Publish EMS message",
   "author": "Mark Mussett <mmussett@tibco.com>",
-  "homepage": "https://github.com/mmussett/flogo-components/tree/master/activity/ems",
+  "homepage": "https://github.com/git-suraj/flogo-components/tree/master/activity/ems",
   "display": {
     "description": "Publish EMS message",
     "category": "Utility",
-    "uid": "mmussett-ems",
+    "uid": "suraj-ems",
     "visible": true
   },
   "inputs":[
