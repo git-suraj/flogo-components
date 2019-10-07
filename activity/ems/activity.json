@@ -1,11 +1,11 @@
 {
-  "name": "ems",
+  "name": "emsv1",
   "type": "flogo:activity",
   "ref": "github.com/git-suraj/flogo-components/activity/ems",
   "version": "0.0.1",
   "title": "Publish EMS message",
   "description": "Publish EMS message",
-  "author": "Mark Mussett <mmussett@tibco.com>",
+  "author": "Suraj <supillai@tibco.com>",
   "homepage": "https://github.com/git-suraj/flogo-components/tree/master/activity/ems",
   "display": {
     "description": "Publish EMS message",

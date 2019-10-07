@@ -1,4 +1,4 @@
-package ems
+package emsv1
 
 /*
 #cgo darwin CFLAGS: -I.
