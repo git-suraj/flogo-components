@@ -2,8 +2,8 @@ package emsv1
 
 /*
 #cgo darwin CFLAGS: -I.
-#cgo darwin CFLAGS: -I/Users/supillai/tibco/bw6/ems/8.4/include/tibems
-#cgo darwin LDFLAGS: -L/Users/supillai/tibco/bw6/ems/8.4/lib -ltibems64
+#cgo darwin CFLAGS: -I/home/include/tibems
+#cgo darwin LDFLAGS: -L/home/lib -ltibems64
 
 #include <tibems.h>
 tibemsDestination castToDestination(tibemsTemporaryQueue queue) {
@@ -36,40 +36,61 @@ import (
 )
 
 const (
-	TIBEMS_SESSION_TRANSACTED  = 0
-	TIBEMS_AUTO_ACKNOWLEDGE    = 1
-	TIBEMS_CLIENT_ACKNOWLEDGE  = 2
+	/* test */
+	TIBEMS_SESSION_TRANSACTED = 0
+	/* test */
+	TIBEMS_AUTO_ACKNOWLEDGE = 1
+	/* test */
+	TIBEMS_CLIENT_ACKNOWLEDGE = 2
+	/* test */
 	TIBEMS_DUPS_OK_ACKNOWLEDGE = 3
-
-	TIBEMS_NO_ACKNOWLEDGE                      = 22 /* Extensions */
-	TIBEMS_EXPLICIT_CLIENT_ACKNOWLEDGE         = 23
+	/* test */
+	TIBEMS_NO_ACKNOWLEDGE = 22 /* Extensions */
+	/* test */
+	TIBEMS_EXPLICIT_CLIENT_ACKNOWLEDGE = 23
+	/* test */
 	TIBEMS_EXPLICIT_CLIENT_DUPS_OK_ACKNOWLEDGE = 24
 ) //tibemsAcknowledgeMode
 
 const (
+	/* test */
 	TIBEMS_FALSE = 0
-	TIBEMS_TRUE  = 1
+	/* test */
+	TIBEMS_TRUE = 1
 ) //tibems_bool
 
 const (
-	TIBEMS_UNKNOWN        = 0
-	TIBEMS_QUEUE          = 1
-	TIBEMS_TOPIC          = 2
+	/* test */
+	TIBEMS_UNKNOWN = 0
+	/* test */
+	TIBEMS_QUEUE = 1
+	/* test */
+	TIBEMS_TOPIC = 2
+	/* test */
 	TIBEMS_DEST_UNDEFINED = 256
 ) //tibemsDestinationType
 
 const (
+	/* test */
 	TIBEMS_NON_PERSISTENT = 1
-	TIBEMS_PERSISTENT     = 2
-	TIBEMS_RELIABLE       = 22 /* Extension */
+	/* test */
+	TIBEMS_PERSISTENT = 2
+	/* test */
+	TIBEMS_RELIABLE = 22 /* Extension */
 ) //tibemsDeliveryMode
 
 const (
-	NPSEND_CHECK_DEFAULT   = 0
-	NPSEND_CHECK_ALWAYS    = 1
-	NPSEND_CHECK_NEVER     = 2
+	/* test */
+	NPSEND_CHECK_DEFAULT = 0
+	/* test */
+	NPSEND_CHECK_ALWAYS = 1
+	/* test */
+	NPSEND_CHECK_NEVER = 2
+	/* test */
 	NPSEND_CHECK_TEMP_DEST = 3
-	NPSEND_CHECK_AUTH      = 4
+	/* test */
+	NPSEND_CHECK_AUTH = 4
+	/* test */
 	NPSEND_CHECK_TEMP_AUTH = 5
 ) //tibemsNpCheckMode
 
