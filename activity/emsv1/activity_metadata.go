@@ -9,78 +9,28 @@ var jsonMetadata = `{
   "type": "flogo:activity",
   "ref": "github.com/git-suraj/flogo-components/activity/emsv1",
   "version": "0.0.1",
-  "title": "Publish EMS message",
-  "description": "Publish EMS message",
-  "author": "Suraj <supillai@tibco.com>",
-  "homepage": "https://github.com/git-suraj/flogo-components/tree/master/activity/emsv1",
-  "display": {
-    "description": "Publish EMS message",
-    "category": "Utility",
-    "uid": "suraj-ems",
-    "visible": true
-  },
-  "inputs":[
+  "title": "Publish EMS Message",
+  "description": "Send message to EMS server",
+  "homepage":"https://github.com/git-suraj/flogo-components/tree/master/activity/emsv1",
+  "settings":[
+  ],
+  "input":[
     {
-      "name": "content",
+      "name": "array1",
       "type": "string",
       "required": true
     },
     {
-      "name": "destination",
+      "name": "array2",
       "type": "string",
       "required": true
-    },
-    {
-      "name": "serverUrl",
-      "type": "string",
-      "required": true
-    },
-    {
-      "name": "user",
-      "type": "string",
-      "required": true
-    },
-    {
-      "name": "password",
-      "type": "string",
-      "required": false
-    },
-    {
-      "name": "exchangeMode",
-      "type": "string",
-      "required": true,
-      "allowed": ["send-only","send-receive"]
-    },
-    {
-      "name": "deliveryDelay",
-      "type": "integer",
-      "required": true
-    },
-    {
-      "name": "deliveryMode",
-      "type": "string",
-      "required": true,
-      "allowed" : ["persistent","non_persistent","reliable"]
-    },
-    {
-      "name": "expiration",
-      "type": "integer",
-      "required": true
-    },
-    {
-      "name": "tracing",
-      "type": "any",
-      "required": false
     }
   ],
-  "outputs": [
+  "output": [
     {
-      "name": "response",
-      "type": "string"
-    },
-    {
-      "name": "tracing",
-      "type": "any"
+      "name": "output",
+      "type": "array",
+      "required": true
     }
   ]
 }
