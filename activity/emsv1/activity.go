@@ -1,5 +1,25 @@
 package emsv1
 
+/*
+#cgo darwin CFLAGS: -I.
+#cgo darwin CFLAGS: -I/home/include/tibems
+#cgo darwin LDFLAGS: -L/home/lib -ltibems64
+
+#include <tibems.h>
+tibemsDestination castToDestination(tibemsTemporaryQueue queue) {
+  return (tibemsDestination)queue;
+}
+tibems_bool castToBool(int value) {
+	return (tibems_bool)value;
+}
+tibems_long castToLong(int value) {
+  return (tibems_long)value;
+}
+tibems_int castToInt(int value) {
+  return (tibems_int)value;
+}
+
+ */
 import (
 	"sync"
 
