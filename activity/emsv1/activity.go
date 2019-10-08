@@ -22,7 +22,6 @@ tibems_int castToInt(int value) {
 */
 import "C"
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
 	"net/url"
@@ -821,6 +820,7 @@ func (a *MyActivity) Metadata() *activity.Metadata {
 // Eval implements activity.Activity.Eval
 func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	log.Debugf("********************************************** line 1")
+	/*
 	//var span opentracing.Span
 	if tracing := context.GetInput(ivTracing); tracing != nil {
 		//span = opentracing.SpanFromContext(tracing.(ctx.Context))
@@ -833,12 +833,12 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 			opentracing.ChildOf(span.Context()))
 		context.SetOutput(ovTracing, opentracing.ContextWithSpan(ctx.Background(), span))
 		defer span.Finish()
-	}*/
+	}
 
 	setTag := func(key string, value interface{}) {
 		/*if span != nil {
 			span.SetTag(key, value)
-		}*/
+		}
 		log.Debugf("********************************** key %v ", key)
 	}
 
@@ -947,7 +947,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 		log.Debugf("Response payload: %s", response)
 		context.SetOutput(ovResponse, response)
 
-	}
+	}*/
 
 	return true, nil
 }
