@@ -57,7 +57,7 @@ func TestSendOnly(t *testing.T) {
 
 	//setup attrs
 	tc.SetInput(ivContent, `{"test": "hello world"}`)
-	tc.SetInput(ivDestination, "queue.sample")
+	tc.SetInput(ivDestination, "test")
 	tc.SetInput(ivServerURL, "tcp://127.0.0.1:7222")
 	tc.SetInput(ivUser, "admin")
 	tc.SetInput(ivPassword, "")
@@ -100,8 +100,8 @@ func TestSendReceive(t *testing.T) {
 
 	//setup attrs
 	tc.SetInput(ivContent, `{"test": "hello world"}`)
-	tc.SetInput(ivDestination, "queue.sample")
-	tc.SetInput(ivServerURL, "tcp://127.0.0.1:7222")
+	tc.SetInput(ivDestination, "test")
+	tc.SetInput(ivServerURL, "tcp://localhost:7222")
 	tc.SetInput(ivUser, "admin")
 	tc.SetInput(ivPassword, "")
 	tc.SetInput(ivDeliveryDelay, 0)

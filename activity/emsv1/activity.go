@@ -33,6 +33,9 @@ import (
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
+
+	"github.com/opentracing/opentracing-go"
+	ctx "golang.org/x/net/context"
 )
 
 const (
@@ -822,24 +825,24 @@ func (a *MyActivity) Metadata() *activity.Metadata {
 func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	log.Debugf("********************************************** line 1")
 
-	//var span opentracing.Span
+	var span opentracing.Span
 	if tracing := context.GetInput(ivTracing); tracing != nil {
 		//span = opentracing.SpanFromContext(tracing.(ctx.Context))
 		log.Debugf("*********************************************** error 1")
 	}
 
-	/*if span != nil {
+	if span != nil {
 		span = opentracing.StartSpan(
 			context.TaskName(),
 			opentracing.ChildOf(span.Context()))
 		context.SetOutput(ovTracing, opentracing.ContextWithSpan(ctx.Background(), span))
 		defer span.Finish()
-	}*/
+	}
 
 	setTag := func(key string, value interface{}) {
-		/*if span != nil {
+		if span != nil {
 			span.SetTag(key, value)
-		}*/
+		}
 		log.Debugf("********************************** key %v ", key)
 	}
 
