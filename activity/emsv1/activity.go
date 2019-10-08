@@ -2,8 +2,8 @@ package emsv1
 
 /*
 #cgo darwin CFLAGS: -I.
-#cgo darwin CFLAGS: -I/home/include/tibems
-#cgo darwin LDFLAGS: -L/home/lib -ltibems64
+#cgo darwin CFLAGS: -I/home/ems/include/tibems
+#cgo darwin LDFLAGS: -L/home/ems/lib -ltibems64
 
 #include <tibems.h>
 tibemsDestination castToDestination(tibemsTemporaryQueue queue) {
