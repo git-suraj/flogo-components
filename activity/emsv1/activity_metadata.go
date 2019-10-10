@@ -2,6 +2,7 @@ package emsv1
 
 import (
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
+	"github.com/project-flogo/legacybridge"
 )
 
 var jsonMetadata = `{
@@ -89,6 +90,6 @@ var jsonMetadata = `{
 // init create & register activity
 func init() {
 	md := activity.NewMetadata(jsonMetadata)
-	activity.Register(NewActivity(md))
-	//legacybridge.RegisterLegacyActivity(NewActivity(md))
+	//activity.Register(NewActivity(md))
+	legacybridge.RegisterLegacyActivity(NewActivity(md))
 }
