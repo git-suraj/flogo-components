@@ -34,12 +34,15 @@ func (a *CounterActivity) Metadata() *activity.Metadata {
 
 // Eval implements activity.Activity.Eval
 func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
+	log.Debug("started......")
 	ip := context.GetInput("input").(string)
+	log.Debugf("ip %v ..........", ip)
 	in := []byte(ip)
 	var raw map[string]interface{}
 	json.Unmarshal(in, &raw)
 	output := &Output{}
 	output.Schema = raw
 	context.SetOutput("output", output)
+	log.Debug("end......")
 	return true, nil
 }
