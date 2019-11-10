@@ -2,8 +2,8 @@
   "title": "Parse JSON",
   "name": "Parse-JSON",
   "author": "Suraj",
-  "ref": "https://github.com/git-suraj/flogo/parsejson",
-  "homepage":"https://github.com/git-suraj/flogo/tree/master/parsejson",
+  "ref": "github.com/git-suraj/flogo-components/activity/parsejson",
+  "homepage":"https://github.com/git-suraj/flogo-components/tree/master/activity/parsejson",
   "type": "flogo:activity",
   "version": "1.1.0",
   "display": {
