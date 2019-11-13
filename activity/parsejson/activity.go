@@ -38,11 +38,11 @@ func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 	ip := context.GetInput("input").(string)
 	log.Debugf("ip %v ..........", ip)
 	in := []byte(ip)
-	var raw map[string]interface{}
-	json.Unmarshal(in, &raw)
+	/*var raw map[string]interface{}
+	json.Unmarshal(in, &raw)*/
 	/*output := &Output{}
 	output.Schema = raw*/
-	context.SetOutput("output", raw)
+	context.SetOutput("output", ip)
 	log.Debug("end......")
 	return true, nil
 }
