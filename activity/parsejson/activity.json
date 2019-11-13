@@ -33,7 +33,6 @@
       "type": "string",
       "required": true
     }
-
   ],
   "outputs": [{
     "name": "output",
