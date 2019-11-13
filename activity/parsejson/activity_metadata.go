@@ -1,4 +1,4 @@
-package appendarraysv3
+package parsejson
 
 import (
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
