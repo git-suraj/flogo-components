@@ -36,6 +36,6 @@
   ],
   "outputs": [{
     "name": "output",
-    "type": "map[string]interface{}"
+    "type": "object"
   }]
 }
