@@ -37,6 +37,6 @@
   ],
   "outputs": [{
     "name": "output",
-    "type": "complex_object"
+    "type": "string"
   }]
 }

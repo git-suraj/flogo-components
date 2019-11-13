@@ -1,7 +1,6 @@
 package parsejson
 
 import (
-	"encoding/json"
 	"sync"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
@@ -37,12 +36,12 @@ func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 	log.Debug("started......")
 	ip := context.GetInput("input").(string)
 	log.Debugf("ip %v ..........", ip)
-	in := []byte(ip)
+	/*in := []byte(ip)
 	var raw map[string]interface{}
 	json.Unmarshal(in, &raw)
 	output := &Output{}
-	output.Schema = raw
-	context.SetOutput("output", output)
+	output.Schema = raw*/
+	context.SetOutput("output", ip)
 	log.Debug("end......")
 	return true, nil
 }
