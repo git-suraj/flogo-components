@@ -2,7 +2,7 @@
   "title": "Parse JSON",
   "name": "Parse-JSON",
   "author": "Suraj",
-  "ref": "github.com/git-suraj/flogo-components/activity/parsejson",
+  "ref": "github.com/git-suraj/flogo-components/Utility/activity/parsejson",
   "homepage":"https://github.com/git-suraj/flogo-components/tree/master/activity/parsejson",
   "type": "flogo:activity",
   "version": "1.1.0",
@@ -33,9 +33,10 @@
       "type": "string",
       "required": true
     }
+
   ],
   "outputs": [{
     "name": "output",
-    "type": "string"
+    "type": "complex_object"
   }]
 }
