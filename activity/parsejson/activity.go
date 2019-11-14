@@ -11,6 +11,10 @@ import (
 // log is the default package logger
 var log = logger.GetLogger("parse-json")
 
+type p struct {
+	d string
+}
+
 // CounterActivity is a Counter Activity implementation
 type CounterActivity struct {
 	sync.Mutex
@@ -29,14 +33,17 @@ func (a *CounterActivity) Metadata() *activity.Metadata {
 
 // Eval implements activity.Activity.Eval
 func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
-	log.Debug("started......")
-	ip := context.GetInput("input").(string)
-	log.Debugf("ip %v ..........", ip)
+	log.Info("started......")
+	//ip := context.GetInput("input").(string)
+	ip := "{\"d\":\"f\"}"
+	op := p{d: "Sean"}
+	log.Infof("ip %v ..........", ip)
 	in := []byte(ip)
 	jsonMap := make(map[string]interface{})
 	json.Unmarshal(in, &jsonMap)
-	log.Debugf("raw %v ..........", jsonMap)
-	context.SetOutput("output", jsonMap)
-	log.Debug("end......")
+	log.Infof("raw %v ..........", jsonMap)
+	log.Infof("op %v ..........", op)
+	context.SetOutput("output", op)
+	log.Info("end......")
 	return true, nil
 }
