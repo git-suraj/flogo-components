@@ -43,7 +43,7 @@ func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 	json.Unmarshal(in, &jsonMap)
 	log.Infof("raw %v ..........", jsonMap)
 	log.Infof("op %v ..........", op)
-	context.SetOutput("output", op)
+	context.SetOutput("output", jsonMap)
 	log.Info("end......")
 	return true, nil
 }
