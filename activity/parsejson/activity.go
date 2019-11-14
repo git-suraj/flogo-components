@@ -34,7 +34,8 @@ func (a *CounterActivity) Metadata() *activity.Metadata {
 // Eval implements activity.Activity.Eval
 func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 	log.Info("started......")
-	//ip := context.GetInput("input").(string)
+	ip1 := context.GetInput("input").(string)
+	log.Infof("ip1 %v ..........", ip1)
 	ip := "{\"d\":\"f\"}"
 	op := p{d: "Sean"}
 	log.Infof("ip %v ..........", ip)
