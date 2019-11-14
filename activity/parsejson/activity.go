@@ -11,11 +11,6 @@ import (
 // log is the default package logger
 var log = logger.GetLogger("parse-json")
 
-// Output struct
-type Output struct {
-	Schema interface{} `md:"output"`
-}
-
 // CounterActivity is a Counter Activity implementation
 type CounterActivity struct {
 	sync.Mutex
