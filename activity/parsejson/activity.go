@@ -34,17 +34,17 @@ func (a *CounterActivity) Metadata() *activity.Metadata {
 // Eval implements activity.Activity.Eval
 func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 	log.Info("started......")
-	ip1 := context.GetInput("input").(string)
-	log.Infof("ip1 %v ..........", ip1)
-	ip := "{\"d\":\"f\"}"
-	op := p{d: "Sean"}
+	ip := context.GetInput("input").(string)
+	dummyip := "{\"d\":\"f\"}"
 	log.Infof("ip %v ..........", ip)
-	in := []byte(ip)
-	jsonMap := make(map[string]interface{})
-	json.Unmarshal(in, &jsonMap)
-	log.Infof("raw %v ..........", jsonMap)
-	log.Infof("op %v ..........", op)
-	context.SetOutput("output", jsonMap)
+	log.Infof("dummy ip %v ..........", dummyip)
+	jsonMapIP := make(map[string]interface{})
+	jsonMapDummyIP := make(map[string]interface{})
+	json.Unmarshal([]byte(dummyip), &jsonMapDummyIP)
+	json.Unmarshal([]byte(ip), &jsonMapIP)
+	log.Infof("ip map %v ..........", jsonMapIP)
+	log.Infof("dummy map %v ..........", jsonMapDummyIP)
+	context.SetOutput("output", jsonMapDummyIP)
 	log.Info("end......")
 	return true, nil
 }
