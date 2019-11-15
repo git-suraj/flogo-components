@@ -1,0 +1,43 @@
+{
+  "title": "Test Connection",
+  "name": "Test-Connection",
+  "author": "Suraj",
+  "ref": "utils/activity/testconnection",
+  "type": "flogo:activity",
+  "version": "1.0.0",
+  "display": {
+    "visible": true,
+    "description": "This activity tests the connection created",
+    "category": "utils"
+  },
+  "feature": {
+    "iterator": {
+      "type": "iterator",
+      "enabled": false
+    }
+  },
+  "inputs": [{
+    "name": "testConnection",
+    "type": "object",
+    "required": true,
+    "display": {
+      "name": "Test Connection",
+      "description": "Select the Test connection",
+      "type": "connection"
+    },
+    "allowed": []
+  }],
+  "outputs": [{
+      "name": "user",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "type": "string"
+    },
+    {
+      "name": "region",
+      "type": "string"
+    }
+  ]
+}

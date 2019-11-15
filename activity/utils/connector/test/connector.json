@@ -1,0 +1,72 @@
+{
+    "name": "TestConnector",
+    "author": "Suraj",
+    "type": "flogo:connector",
+    "version": "1.0.0",
+    "title": "A test connector",
+    "display": {
+        "description": "This is a test connector",
+        "category": "utils",
+        "visible": true,
+        "smallIcon": "jdbc-small-icon.png",
+        "largeIcon": "jdbc-large-icon.png"
+    },
+    "ref": "utils/connector/test",    
+    "keyField": "name",
+    "settings": [
+        {
+            "name": "name",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Connection Name",
+                "description": "test connection name"
+            }
+        },
+        {
+            "name": "region",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Region",
+                "description": "Region",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": ["EU","US","APAC"],
+            "value": "EU"
+        },
+        {
+            "name": "username",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Username",
+                "description": "username"
+            }
+        },
+        {
+            "name": "password",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Password",
+                "description": "password",
+                "type": "password"
+            }
+        }
+    ],
+    "actions": [
+        {
+            "name": "Create",
+            "actionId": "create",
+            "display":{
+                "readyonly": true
+            }
+        },
+        {
+            "name": "Test Connection",
+            "actionId": "test"
+        }
+    ]
+}
