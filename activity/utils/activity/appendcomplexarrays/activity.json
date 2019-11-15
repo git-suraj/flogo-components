@@ -1,0 +1,46 @@
+{
+  "title": "Append Complex Arrays",
+  "name": "Append-Complex-Arrays",
+  "author": "Suraj",
+  "ref": "utils/activity/appendcomplexarrays",
+  "type": "flogo:activity",
+  "version": "1.0.0",
+  "display": {
+    "visible": true,
+    "description": "This activity parses a json string into object",
+    "category": "utils"
+  },
+  "feature": {
+    "iterator": {
+      "type": "iterator",
+      "enabled": false
+    }
+  },
+  "inputs": [{
+      "name": "inputarray",
+      "type": "array",
+      "display": {
+        "description": "JSON data or schema for the input input array",
+        "type": "texteditor",
+        "syntax": "json",
+        "name": "Input Array Schema",
+        "mappable": true
+      }
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "display": {
+        "description": "JSON data or schema for the input input item to be appended to the array",
+        "type": "texteditor",
+        "syntax": "json",
+        "name": "Input Item Schema",
+        "mappable": true
+      }
+    }
+  ],
+  "outputs": [{
+    "name": "output",
+    "type": "array"
+  }]
+}

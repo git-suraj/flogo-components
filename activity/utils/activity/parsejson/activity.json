@@ -1,0 +1,41 @@
+{
+  "title": "Parse JSON",
+  "name": "Parse-JSON",
+  "author": "Suraj",
+  "ref": "utils/activity/parsejson",
+  "type": "flogo:activity",
+  "version": "1.0.0",
+  "display": {
+    "visible": true,
+    "description": "This activity parses a json string into object",
+    "category": "utils"
+  },
+  "feature": {
+    "iterator": {
+      "type": "iterator",
+      "enabled": false
+    }
+  },
+  "inputs": [{
+      "name": "item",
+      "type": "complex_object",
+      "display": {
+        "description": "JSON data or schema for the input",
+        "type": "texteditor",
+        "syntax": "json",
+        "name": "Input Schema",
+        "mappable": false
+      }
+    },
+    {
+      "name": "input",
+      "type": "string",
+      "required": true
+    }
+
+  ],
+  "outputs": [{
+    "name": "output",
+    "type": "complex_object"
+  }]
+}

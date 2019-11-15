@@ -1,4 +1,4 @@
-package appendarrays
+package appendcomplexarrays
 
 import (
 	"sync"
@@ -8,7 +8,11 @@ import (
 )
 
 // log is the default package logger
-var log = logger.GetLogger("activity-tibco-append-arrays")
+var log = logger.GetLogger("append-complex-arrays")
+
+type p struct {
+	d string
+}
 
 // CounterActivity is a Counter Activity implementation
 type CounterActivity struct {
@@ -28,10 +32,13 @@ func (a *CounterActivity) Metadata() *activity.Metadata {
 
 // Eval implements activity.Activity.Eval
 func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
-
-	array1 := context.GetInput("array1").([]interface{})
-	array2 := context.GetInput("array2").([]interface{})
-	arrayOp := append(array1, array2...)
-	context.SetOutput("output", arrayOp)
+	log.Debug("started......")
+	arrIP := context.GetInput("inputarray").([]interface{})
+	log.Debugf("array ip %v ..........", arrIP)
+	itemIP := context.GetInput("item").(map[string]interface{})
+	log.Debugf("item ip %v ..........", itemIP)
+	arrOP := append(arrIP, itemIP)
+	context.SetOutput("output", arrOP)
+	log.Debug("end......")
 	return true, nil
 }
