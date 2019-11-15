@@ -37,16 +37,16 @@ func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 	log.Info("started......")
 	aip := context.GetInput("input").(string)
 	ip := strings.Replace(aip, "\\", "", -1)
-	dummyip := "{\"d\":\"f\"}"
+	//dummyip := "{\"d\":\"f\"}"
 	log.Infof("ip %v ..........", ip)
-	log.Infof("dummy ip %v ..........", dummyip)
+	//log.Infof("dummy ip %v ..........", dummyip)
 	jsonMapIP := make(map[string]interface{})
-	jsonMapDummyIP := make(map[string]interface{})
-	json.Unmarshal([]byte(dummyip), &jsonMapDummyIP)
+	//jsonMapDummyIP := make(map[string]interface{})
+	//json.Unmarshal([]byte(dummyip), &jsonMapDummyIP)
 	json.Unmarshal([]byte(ip), &jsonMapIP)
 	log.Infof("ip map %v ..........", jsonMapIP)
-	log.Infof("dummy map %v ..........", jsonMapDummyIP)
-	context.SetOutput("output", jsonMapDummyIP)
+	//log.Infof("dummy map %v ..........", jsonMapDummyIP)
+	context.SetOutput("output", jsonMapIP)
 	log.Info("end......")
 	return true, nil
 }
