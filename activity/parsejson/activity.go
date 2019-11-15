@@ -2,7 +2,6 @@ package parsejson
 
 import (
 	"encoding/json"
-	"strings"
 	"sync"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
@@ -36,7 +35,8 @@ func (a *CounterActivity) Metadata() *activity.Metadata {
 func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 	log.Info("started......")
 	aip := context.GetInput("input").(string)
-	ip := strings.ReplaceAll(aip, "\\", "")
+	//ip := strings.ReplaceAll(aip, "\\", "")
+	ip := aip
 	dummyip := "{\"d\":\"f\"}"
 	log.Infof("ip %v ..........", ip)
 	log.Infof("dummy ip %v ..........", dummyip)
