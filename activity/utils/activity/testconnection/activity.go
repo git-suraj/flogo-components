@@ -4,6 +4,7 @@ import (
 	"sync"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
+	"github.com/TIBCOSoftware/flogo-lib/core/data"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 )
 
@@ -58,6 +59,8 @@ func (a *CounterActivity) Eval(context activity.Context) (bool, error) {
 	context.SetOutput("user", username)
 	context.SetOutput("password", password)
 	context.SetOutput("region", region)
+	outputField := &data.ComplexObject{Value: o}
+	context.SetOutput("op", outputField)
 	log.Debug("end......")
 	return true, nil
 }

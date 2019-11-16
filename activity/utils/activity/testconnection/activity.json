@@ -38,6 +38,14 @@
     {
       "name": "region",
       "type": "string"
+    },
+    {
+      "name": "op",
+      "type": "complex_object",
+      "value": {
+        "metadata": "",
+        "value": "{\"username\":\"\",\"password\":\"\",\"region\":\"\"}"
+      }
     }
   ]
 }
