@@ -1,0 +1,33 @@
+{
+  "title": "Add Array",
+  "name": "Add-Array",
+  "author": "Suraj",
+  "ref": "utils/activity/addarray",
+  "type": "flogo:activity",
+  "version": "1.0.0",
+  "display": {
+    "visible": true,
+    "description": "This activity add the elements of an array",
+    "category": "utils"
+  },
+  "feature": {
+    "iterator": {
+      "type": "iterator",
+      "enabled": false
+    }
+  },
+  "inputs": [{
+    "name": "input",
+    "type": "complex_object",
+    "required": true,
+    "value": {
+        "metadata": "",
+        "value": "{\"val\":[1.234]}"
+    }
+}
+  ],
+  "outputs": [{
+    "name": "output",
+    "type": "number"
+  }]
+}
