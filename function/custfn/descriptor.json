@@ -1,0 +1,18 @@
+{
+    "name": "custfn",
+    "type": "flogo:function",
+    "version": "0.0.1",
+    "title": "custfn",
+    "description": "custfn",
+    "functions": [
+        {
+            "name": "custfn",
+            "description": "Returns the current datetime with UTC timezone.",
+            "example": "datetime.currentDatetime() => 2017-05-13T22:27:54+00:00",
+            "args": [],
+            "return": {
+                "type": "string"
+            }
+        }
+    ]
+}
